@@ -1,0 +1,32 @@
+{:paths ["src" "resources" "target/resources"]
+
+ :deps {babashka/fs {:mvn/version "0.4.18"}
+        babashka/process {:mvn/version "0.5.19"}
+        camel-snake-kebab/camel-snake-kebab {:mvn/version "0.4.3"}
+        com.biffweb/biff {:git/url "https://github.com/jacobobryant/biff"
+                          :git/tag "v0.7.6" :git/sha "d0a3248"
+                          :exclusions [org.clojure/tools.deps.alpha]}
+        com.cnuernber/charred {:mvn/version "1.028"}
+        io.github.rads/rain {:git/tag "v0.1.0" :git/sha "205ac6c"}
+        org.babashka/http-client {:mvn/version "0.2.9"}
+        org.babashka/json {:mvn/version "0.1.1"}
+        org.clj-commons/hickory {:mvn/version "0.7.3"}
+        org.clojure/clojure {:mvn/version "1.12.0-alpha3"}
+        org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
+                                      :git/sha "8f8fc2571e721301b6d52e191129248355cb8c5a"}
+        medley/medley {:mvn/version "1.4.0"}
+        org.slf4j/slf4j-simple {:mvn/version "2.0.7"}}
+
+ :aliases
+ {:dev
+  {:extra-deps {ring/ring-devel {:mvn/version "1.10.0"}
+                io.github.rads/preload {:git/sha "70e7174" :git/tag "v0.1.1"}}
+   :main-opts ["-m" "rads.preload" "-m" "bbin-site.main"]}
+
+  :neil
+  {:project {:version "0.0.1-SNAPSHOT"
+             :name io.github.rads/bbin-site}}
+
+  :shadow-cljs
+  {:extra-deps {thheller/shadow-cljs {:mvn/version "2.23.3"}}
+   :main-opts ["-m" "shadow.cljs.devtools.cli"]}}}

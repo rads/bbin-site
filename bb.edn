@@ -1,0 +1,11 @@
+{:deps {io.github.rads/rain.tasks {:git/url "git@github.com:rads/rain.git"
+                                   :git/tag "v0.1.2" :git/sha "70f2f53"
+                                   :deps/root "tasks"}}
+ :tasks {dev (exec 'rain.tasks/dev)
+         lint (shell "clj-kondo --lint .")
+         npm-ci (shell "npm ci")
+         postcss (exec 'rain.tasks/postcss)
+         shadow-cljs (clojure "-M:shadow-cljs release prod")
+         assets {:depends [npm-ci postcss shadow-cljs]}
+         partial-build (clojure "-X bbin-site.main/partial-build")
+         full-build {:depends [lint npm-ci assets partial-build]}}}
