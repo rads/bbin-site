@@ -49,7 +49,7 @@
    :middleware [rrf/wrap-rf]
    #?@(:clj [:static-props (fn [_] {:repos (model/get-all-repos)
                                     :repo-sort-order [:description :asc]})
-             :static-paths (fn [] [{:id 1} {:id 2}])])})
+             #_#_:static-paths (fn [] [{:id 1} {:id 2}])])})
 
 (def plugin
   {:routes [["/" index-route]]})
