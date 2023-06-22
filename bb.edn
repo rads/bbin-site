@@ -1,6 +1,5 @@
-{:deps {io.github.rads/rain.tasks {:git/url "git@github.com:rads/rain.git"
-                                   :git/tag "v0.1.2" :git/sha "70f2f53"
-                                   :deps/root "tasks"}}
+{:deps {io.github.rads/rain {:git/tag "v0.1.1" :git/sha "d3b0a39"
+                             :deps/root "tasks"}}
  :tasks {dev (exec 'rain.tasks/dev)
          lint (shell "clj-kondo --lint .")
          npm-ci (shell "npm ci")
