@@ -29,7 +29,7 @@
         [:th.hover:bg-blue-200.hover:cursor-pointer
          {:on-click (rrf/dispatcher [::toggle-repo-sort :description :asc])}
          "Name"]
-        [:th.hover:bg-blue-200.hover:cursor-pointer
+        [:th.hidden.md:table-cell.hover:bg-blue-200.hover:cursor-pointer
          {:on-click (rrf/dispatcher [::toggle-repo-sort :description :desc])}
          "Description"]
         [:th.hover:bg-blue-200.hover:cursor-pointer
@@ -43,7 +43,7 @@
            [:div.flex.items-center.space-x-3
             [:a.link.font-bold {:href html-url}
              (str lib)]]]
-          [:td.bg-transparent
+          [:td.hidden.md:table-cell.bg-transparent
            description]
           [:td.bg-transparent
            stargazers-count]])]]]))
