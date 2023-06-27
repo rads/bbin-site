@@ -34,12 +34,13 @@
          "Stars"]]]
       [:tbody.bg-base-100
        (for [repo repos
-             :let [{:keys [lib html-url stargazers-count]} repo]]
+             :let [{:keys [lib html-url description stargazers-count]} repo]]
          [:tr.hover:bg-base-200 #?(:clj nil :cljs {:key lib})
           [:td.bg-transparent
            [:div.flex.items-center.space-x-3
             [:a.link.font-bold {:href html-url}
-             (str lib)]]]
+             (str lib)]
+            [:span description]]]
           [:td.bg-transparent
            stargazers-count]])]]]))
 
