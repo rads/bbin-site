@@ -15,7 +15,7 @@
                        :description (str settings/app-name " Description")
                        :image "https://clojure.org/images/clojure-logo-120b.png"})
          (update :base/head (fn [head]
-                              (concat [(rain/stylesheet-tags ctx)
+                              (concat [(rain/stylesheet-tags)
                                        (rain/meta-tags ctx)]
                                       head))))
      [[:div#app.min-h-screen.p-5.bg-base-300
