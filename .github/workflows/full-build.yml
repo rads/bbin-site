@@ -56,3 +56,5 @@ jobs:
       - uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           folder: target/resources/public
+          git-config-name: GitHub Action
+          git-config-email: <>
